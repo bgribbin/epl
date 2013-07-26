@@ -1,0 +1,15 @@
+<div class="center">
+  <div class="row">
+
+<h1>Pick your favorite team...</h1>
+      <div class="span12">
+    <% @clubs.each do |club| %>
+    <div class="span2">
+    <%= link_to "#{club.name}", start_questions_path(:club_id => club.id), class: 'btn btn-primary' %></br>
+   </div>
+    <% end %>
+
+
+      </div>
+  </div>
+</div>

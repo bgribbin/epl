@@ -1,0 +1,32 @@
+<div class="center">
+<h1>WOULD YOU RATHER?</h1>
+
+
+<h3><%= @players.last.position %></h3>
+<div class="row">
+<div class="span8">
+<div class="row">
+<% @players.each do |player| %>
+<div class="span2">
+
+<%= link_to "#{player.name}" , answer_questions_path(:id => player.id), class: "btn btn-primary" %></br>
+<%= player.club.name %>
+
+
+</div>
+<% end %>
+</div>
+</div>
+<div class="span3">
+<h2>Most Voted Players</h2>
+<ul>
+	<% @all_players.first(10).each do |p| %>
+<li><%= p.name %>
+<%= p.answers.count %></li>
+<% end %>
+
+</ul>
+
+</div>
+</div>
+</div>

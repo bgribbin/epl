@@ -1,0 +1,22 @@
+<div class="center">
+<h1>WOULD YOU RATHER?</h1>
+<small>1/11</small>
+
+<h2>4th <%= @defenders.last.position %></h2>
+<div class="row">
+<div class="span12">
+<div class="row">
+<% @defenders.each do |player| %>
+<div class="span4">
+
+<%= link_to "#{player.name}" , next_wizard_path(:player_id => player.id), :method => :put, class: "btn btn-primary" %></br></br></br>
+<%= player.club.name %>
+
+
+</div>
+<% end %>
+</div>
+</div>
+
+</div>
+</div>
