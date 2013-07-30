@@ -1,31 +1,101 @@
 <div class="center">
-<h1>WOULD YOU RATHER?</h1>
 
+  <div class="row">
+    <h1>You support: <%= @guest.club.name %></h1>
+<div class="span12">
+<div class="span12">
+<div class="club">
+<button class="btn btn-info"> <%= @goalkeeper.name %></button>
+</div>
+</div>
 
-<h3><%= @players.last.position %></h3>
-<div class="row">
-<div class="span8">
-<div class="row">
-<% @players.each do |player| %>
 <div class="span2">
-
-<%= link_to "#{player.name}" , answer_questions_path(:id => player.id), class: "btn btn-primary" %></br>
-<%= player.club.name %>
-
-
-</div>
-<% end %>
+<div class="club">
+<button class="btn btn-info"> <%= @defender1.name %></button>
 </div>
 </div>
-<div class="span3">
-<h2>Most Voted Players</h2>
-<ul>
+<div class="span2 offset1">
+<div class="club">
+<button class="btn btn-info"> <%= @defender2.name %></button>
+</div>
+</div>
+<div class="span2 offset1">
+<div class="club">
+<button class="btn btn-info"> <%= @defender3.name %></button>
+</div>
+</div>
+<div class="span2">
+<div class="club">
+<button class="btn btn-info"> <%= @defender4.name %></button>
+</div>
+</div>
+<div class="span2">
+<div class="club">
+<button class="btn btn-info"> <%= @midfielder1.name %></button>
+</div>
+</div>
+<div class="span2 offset1">
+<div class="club">
+<button class="btn btn-info"> <%= @midfielder2.name %></button>
+</div>
+</div>
+<div class="span2 offset1">
+<div class="club">
+<button class="btn btn-info"> <%= @midfielder3.name %></button>
+</div>
+</div>
+<div class="span2">
+<div class="club">
+<button class="btn btn-info"> <%= @midfielder4.name %></button>
+</div>
+</div>
+<div class="span4 offset1">
+<div class="club">
+<button class="btn btn-info"> <%= @forward1.name %></button>
+</div>
+</div>
+<div class="span4">
+<div class="club">
+<button class="btn btn-info"> <%= @forward2.name %></button>
+</div>
+</div>
+
+
+<div class="span5">
+<div class="club"></div>
+<h1>Most Voted Players</h1>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Player</th>
+<th>Club</th>
+<th>Votes</th>
+</tr>
 	<% @all_players.first(10).each do |p| %>
-<li><%= p.name %>
-<%= p.answers.count %></li>
+<tbody>
+<td><%= p.name %></td><td><%= p.club.name %></td><td><%= p.votes %></td>
+</tbody>
 <% end %>
+</table>
 
-</ul>
+
+</div>
+<div class="span5 offset1">
+<div class="club"></div>
+<h1>Most Supported Club</h1>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Club</th>
+<th>Votes</th>
+</tr>
+	<% @clubs.first(10).each do |club| %>
+<tbody>
+<td><%= club.name %></td><td><%= club.guests.count %></td>
+</tbody>
+<% end %>
+</table>
+
 
 </div>
 </div>

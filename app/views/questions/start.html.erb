@@ -2,10 +2,14 @@
   <div class="row">
 
 <h1>Pick your favorite team...</h1>
+<%= form_for @guest do |f| %>
+<%= f.text_field :name %><br />
       <div class="span12">
     <% @clubs.each do |club| %>
     <div class="span2">
+      <div class="club">
     <%= link_to "#{club.name}", questions_path(:club_id => club.id), class: 'btn btn-primary' %></br>
+   </div>
    </div>
     <% end %>
 

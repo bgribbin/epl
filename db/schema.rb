@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725214756) do
+ActiveRecord::Schema.define(version: 20130728163141) do
 
   create_table "answers", force: true do |t|
     t.datetime "created_at"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20130725214756) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes"
   end
+
+  add_index "clubs", ["votes"], name: "index_clubs_on_votes"
 
   create_table "guests", force: true do |t|
     t.datetime "created_at"
@@ -42,6 +45,7 @@ ActiveRecord::Schema.define(version: 20130725214756) do
     t.integer  "midfielder4"
     t.integer  "forward1"
     t.integer  "forward2"
+    t.string   "name"
   end
 
   create_table "players", force: true do |t|
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20130725214756) do
     t.datetime "updated_at"
     t.string   "position"
     t.integer  "club_id"
+    t.integer  "votes"
   end
 
   create_table "questions", force: true do |t|

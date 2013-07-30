@@ -10,14 +10,16 @@ Goalkeeper
 <div class="row">
 <% @goalies.each do |player| %>
 <div class="span4">
+<div class="club"><h4>
+<%= player.club.name.upcase %></h4>
+</div>
+<%= link_to "#{player.name}" , wizard_path(:goalkeeper, :player_id => player.id) , :method => :put, class: "btn btn-large btn-primary" %></br>
 
-<%= link_to "#{player.name}" , wizard_path(player.id) , :method => :put, class: "btn btn-primary" %></br></br></br>
-<%= player.club.name %>
 
 
 </div>
 <% end %>
-<%= session[:guest_id] %>
+
 </div>
 </div>
 
