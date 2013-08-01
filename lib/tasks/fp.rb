@@ -1,5 +1,4 @@
 require 'rubygems'
-require './HTTParty'
 require 'json'
 require './config/boot'
 require './config/environment'
