@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem "flat-ui-rails"
 gem 'bootstrap-sass'
 gem 'wicked'
+gem 'httparty'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

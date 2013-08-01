@@ -3,7 +3,7 @@ require 'json'
 require './config/boot'
 require './config/environment'
 
-array = (400..512).step(1).to_a
+array = (1..512).step(1).to_a
 
 array.each do |p|
 
