@@ -46,7 +46,7 @@ def final
   @forward1 = Player.find(@guest.forward1)
   @forward2 = Player.find(@guest.forward2)
   @all_players = Player.all.order('votes desc')
-  @clubs = Club.all.order('votes desc')
+  @final_clubs = Club.all.order('votes asc')
 end
 
 end

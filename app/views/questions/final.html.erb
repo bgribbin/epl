@@ -1,8 +1,9 @@
 <div class="center">
 
   <div class="row">
-    <h1>You support: <%= @guest.club.name %></h1>
+    <h1>You support: <%= @guest.club.name %>  <%= link_to "Start again", root_path, class: 'btn btn-primary', style: 'float:left;' %></h1>
 <div class="span12">
+
 <div class="span12">
 <div class="club">
 <button class="btn btn-info"> <%= @goalkeeper.name %></button>
@@ -89,7 +90,7 @@
 <th>Club</th>
 <th>Votes</th>
 </tr>
-	<% @clubs.first(10).each do |club| %>
+	<% @final_clubs.first(10).each do |club| %>
 <tbody>
 <td><%= club.name %></td><td><%= club.guests.count %></td>
 </tbody>
